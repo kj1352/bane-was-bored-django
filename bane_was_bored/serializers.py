@@ -12,4 +12,4 @@ class TorsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Tors
-        fields = ('title', 'text', 'link', 'published_date')
+        fields = ('author', 'text', 'link', 'published_date')

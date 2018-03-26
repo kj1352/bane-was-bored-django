@@ -4,9 +4,9 @@ from django.utils import timezone
 
 # Create your models here.
 class Tors(models.Model):
-    title = models.CharField(max_length=200)
+    author = models.CharField(max_length=200)
     text = models.TextField()
-    link = models.CharField(max_length=1000, null=False, blank=False)
+    link = models.CharField(max_length=1000, null=True, blank=True)
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -18,7 +18,7 @@ class Tors(models.Model):
 
 
     def __str__(self):
-        return self.title
+        return self.author
 
     def __unicode__(self):
-        return self.title
+        return self.author

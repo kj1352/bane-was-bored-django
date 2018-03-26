@@ -21,3 +21,10 @@ class TorsList(APIView):
         torlist = Tors.objects.all()
         serializer = TorsSerializer(torlist, many=True)
         return Response(serializer.data)
+
+    def post(self,request):
+        serializer = TorsSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors)
